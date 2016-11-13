@@ -16,47 +16,6 @@ a {
     box-sizing: border-box;
 }
 
-.row{
-    @mixin clearfix;
-    
-     &--gutter {    /* row is constrained by the width of wrapper div */
-        margin-right: -60px; /*make any row with gutter wider to the right*/
-        overflow: hidden; /*hide the overflow part (aka hide the extra margin right)*/
-    }
-    
-    &--gutter > div{    /*any gutter row's child divs*/
-        padding-right: 60px;
-    }
-    
-    @mixin atMed{
-        
-        &__b-mg-on-sm{
-                margin-bottom: 0px;   
-        }
-        
-        &__med4{
-            float: left;
-            width: 33.33%;
-            
-            &-lg{
-                width: 37%;
-            }
-        }
-        
-        &__med8{
-            float: right;
-            width: 66.66%;
-            
-            &-sm{
-                width: 63%;
-            }
-        }
-    }
-    
-    &__b-mg-on-sm{
-            margin-bottom: 20px;   
-    }
-}
 
 .wrapper{
     padding-left: 20px;
@@ -103,4 +62,69 @@ a {
 
 .margin-bottom-lg{
     margin-bottom: 1.6em;
+}
+
+
+.section-title{
+    font-size: 2.55rem;
+    font-weight: 300;
+    text-align: center;
+    color: white;
+    
+    @mixin atSmall{
+        font-size: 3.75rem;
+    }
+    
+    strong {
+        font-weight: 500;
+    }
+    
+    &__icon{
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: .6rem;
+        
+        @mixin atSmall{
+            margin-right:.5rem;
+            margin-left: 0;
+            display: inline-block;
+            margin-bottom: 0;
+
+        }
+    }
+}
+
+.feature-block{
+    color: white;
+    position: relative;
+    padding-bottom: 2.5rem;
+    
+    
+    @mixin atSmall{
+        padding-left: 94px;
+    }
+    
+    &__title{
+        font-size: 1.6rem;
+        font-weight: 300;
+        margin-top: .7em;
+        margin-bottom: .8rem;
+        text-align: center;
+        
+        @mixin atSmall{
+                margin-top: 1em;
+                text-align: left;
+                font-size: 1.875rem;
+        }
+    }
+    
+    &__icon{
+        display: block;
+        margin: 0 auto;
+        @mixin atSmall{
+            position: absolute;
+            left: 0;     
+        }
+    }
 }
