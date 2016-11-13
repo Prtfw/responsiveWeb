@@ -8,15 +8,78 @@ img {
     max-height: auto;
 }
 
+a {
+  color: $orange;  
+}
+
+*{
+    box-sizing: border-box;
+}
+
+.row{
+    @mixin clearfix;
+    
+     &--gutter {    /* row is constrained by the width of wrapper div */
+        margin-right: -60px; /*make any row with gutter wider to the right*/
+        overflow: hidden; /*hide the overflow part (aka hide the extra margin right)*/
+    }
+    
+    &--gutter > div{    /*any gutter row's child divs*/
+        padding-right: 60px;
+    }
+    
+    @mixin atMed{
+        
+        &__b-mg-on-sm{
+                margin-bottom: 0px;   
+        }
+        
+        &__med4{
+            float: left;
+            width: 33.33%;
+            
+            &-lg{
+                width: 37%;
+            }
+        }
+        
+        &__med8{
+            float: right;
+            width: 66.66%;
+            
+            &-sm{
+                width: 63%;
+            }
+        }
+    }
+    
+    &__b-mg-on-sm{
+            margin-bottom: 20px;   
+    }
+}
+
 .wrapper{
     padding-left: 20px;
     padding-right: 20px;
-    max-width: 1200px;
+    max-width: 1240px;
     margin-left:auto; 
     margin-right: auto;
     
     &--small{
         max-width: 976px;
+    }
+    
+    .wrapper {
+        padding-left: 0;
+        padding-right: 0;
+    }
+    
+    &__b-margin{
+        margin-bottom: 1rem;
+        
+        @mixin atSmall{
+            margin-bottom: 3.875rem;
+        }
     }
 }
 
@@ -33,41 +96,6 @@ img {
     }
 }
 
-
-.headline{
-    font-weight: 300;
-    font-size: 1.9rem;
-    color: $blue;
-    
-    @mixin atSmall{
-        font-size: 2.875rem;
-    }
-    
-    &--centered{
-        text-align: center;
-    }
-    
-    &--orange{
-        color: $orange;
-    }
-    
-        
-    &--small{
-        font-size: 1.2rem;
-        @mixin atSmall{
-            font-size: 1.875rem;
-        }
-    }
-    &--narrow{
-        max-width: 500px;
-        margin-left:auto; 
-        margin-right: auto;
-        
-    }
-    &--lite{
-        font-weight: 100;
-    }
-}
 
 .margin-bottom-sm{
     margin-bottom: .5em;
