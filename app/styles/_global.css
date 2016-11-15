@@ -16,6 +16,49 @@ a {
     box-sizing: border-box;
 }
 
+.testimonial{
+    background-color: rgba(255,255,255,.8);
+    padding: 0 18px 1px 18px;
+    overflow: visible;
+    margin-bottom: 98px;
+    
+    @mixin atMed{
+        padding: 0 1.8125rem 1px 1.8125rem;
+        margin-bottom: 0px;
+    }
+    
+    &--last{
+        margin-bottom:0;
+    }
+    
+    &__photo{
+        border-radius: 80px;
+        border: 3px solid rgba(255,255,255,.8);
+        overflow: hidden;
+        width:160px;
+        height: 160px;
+        margin: 0 auto -80px auto;
+        position: relative;
+        top: -80px;
+    }
+    &__title{
+        color: $blue;
+        text-align: center;
+        font-size: 1.5rem;
+        font-weight: 500;
+        margin: 0;
+    }
+    &__subtitle{
+        color: $orange;
+        text-align: center;
+        text-align: center;
+        font-size: .9375rem;
+        font-weight: 400;
+        margin: .25rem 0 1rem 0;
+    }
+    
+}
+
 
 .wrapper{
     padding-left: 20px;
@@ -26,6 +69,24 @@ a {
     
     &--small{
         max-width: 976px;
+    }
+    
+    &--nopad-tilMed{
+            padding-left: 0px;
+            padding-right: 0px;;
+        @mixin atMed{ 
+                padding-left: 20px;
+                padding-right: 20px;
+        }
+    }
+    
+    &--nopad-tilLg{
+            padding-left: 0px;
+            padding-right: 0px;;
+        @mixin atLg{ 
+                padding-left: 20px;
+                padding-right: 20px;
+        }
     }
     
     .wrapper {
@@ -49,6 +110,18 @@ a {
         background-color: $blue;
     }
     
+    &--testimonials{
+        background-color: #e0e6ef;
+        margin
+        
+        @mixin atMed{
+            background: url(../../assets/images/testimonials-bg.jpg) top center no-repeat;
+            background-size: cover;
+        }
+    }
+    
+    
+    
     @mixin atMed{
         padding: 4.5rem 0;
 
@@ -69,7 +142,10 @@ a {
     font-size: 2.55rem;
     font-weight: 300;
     text-align: center;
-    color: white;
+    
+    &--blue{
+        color: $blue;
+    }
     
     @mixin atSmall{
         font-size: 3.75rem;
@@ -86,6 +162,8 @@ a {
         margin-bottom: .6rem;
         
         @mixin atSmall{
+            position: relative;
+            top: 8px;
             margin-right:.5rem;
             margin-left: 0;
             display: inline-block;
@@ -122,6 +200,7 @@ a {
     &__icon{
         display: block;
         margin: 0 auto;
+  
         @mixin atSmall{
             position: absolute;
             left: 0;     
