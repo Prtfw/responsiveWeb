@@ -1,0 +1,128 @@
+.row{
+    @mixin clearfix;
+    
+     &--gutter {    /* row is constrained by the width of wrapper div */
+        margin-right: -60px; /*make any row with gutter wider to the right*/
+        overflow: hidden; /*hide the overflow part (aka hide the extra margin right)*/
+    }
+    
+    &--gutter-sm {    /* row is constrained by the width of wrapper div */
+        margin-right: -45px; /*make any row with gutter wider to the right*/
+        overflow: hidden; /*hide the overflow part (aka hide the extra margin right)*/
+    }
+    
+    &--gutter-lg {    /* row is constrained by the width of wrapper div */
+        margin-right: -100px; /*make any row with gutter wider to the right*/
+        overflow: hidden; /*hide the overflow part (aka hide the extra margin right)*/
+    }
+    
+    &--gutter > div{    /*any gutter row's child divs, so no content is being put in the right margin*/
+        padding-right: 60px; 
+    }
+    
+    &--gutter-lg > div{    /*any gutter row's child divs*/
+        padding-right: 100px;
+    }
+    
+    &--gutter-sm > div{    /*any gutter row's child divs*/
+        padding-right: 45px;
+    }
+    
+    &--t-padding{
+        padding-top: 60px;
+    }
+    
+    @mixin atMed{
+        
+        &__b-mg-on-sm{
+                margin-bottom: 0px;   
+        }
+        
+        &__med4{
+            float: left;
+            width: 33.33%;
+            
+            &-lg{
+                width: 37%;
+            }
+        }
+        
+        &__med6{
+            float: left;
+            width: 50%;
+        }
+        
+        &__med8{
+            float: right;
+            width: 66.66%;
+            
+            &-sm{
+                width: 63%;
+            }
+        }
+    }
+    
+    
+        @mixin atLg{
+        
+        &__b-mg-on-sm{
+                margin-bottom: 0px;   
+        }
+        
+        &__Lg4{
+            float: left;
+            width: 33.33%;
+            
+            &-lg{
+                width: 37%;
+            }
+        }
+        
+        &__Lg6{
+            float: left;
+            width: 50%;
+        }
+        
+        &__Lg8{
+            float: right;
+            width: 66.66%;
+            
+            &-sm{
+                width: 63%;
+            }
+        }
+    }
+    
+    
+    
+    &__b-mg-on-sm{
+            margin-bottom: 20px;   
+    }
+    
+    
+    /*begin eq height rules a.k.a. flexbox*/
+    
+    &--eq-height-atMed{
+        
+        @mixin atMed{
+            display: flex;
+        }
+        
+        & > div {
+            float: none;
+            display: flex;
+        }
+    }
+    
+    &--eq-height-atLg{
+        
+        @mixin atLg{
+            display: flex;
+        }
+        
+        & > div {
+            float: none;
+            display: flex;
+        }
+    }
+}
