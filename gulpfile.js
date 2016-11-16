@@ -2,6 +2,8 @@ var     gulp = require("gulp"),
         watch = require("gulp-watch"),
         svgsprite = require("gulp-svg-sprite"),
         rename = require('gulp-rename'),
+        del = require('del'),
+
 
         
         //styles vars
@@ -67,15 +69,22 @@ var config = {
     }
 }
 
-gulp.task("makeSprite", function(){
+gulp.task("makeSprite",['clearFolder'], function(){
     return gulp.src('./app/assets/images/icons/**/*.svg')
             .pipe(svgsprite(config))
             .pipe(gulp.dest('./app/temp/sprite/'))
             
 })
 
-gulp.task("copySprite", function(){
+gulp.task("copySprite",['makeSprite'], function(){
     return gulp.src('./app/temp/sprite/css/*.css')
             .pipe(rename("_sprite.css"))
             .pipe(gulp.dest('./app/styles'))
 })
+
+gulp.task("clearFolder", function(){
+    return del('./app/temp/sprite')
+})
+
+
+gulp.task("svgs", ['clearFolder','makeSprite','copySprite'])

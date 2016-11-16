@@ -1,8 +1,14 @@
+/*do not change this file... it's auto created by gulp*/
+
 {{#shapes}}
+    {{#first}}
+    .icon{
+        background-image: url('./app/temp/sprite/css/{{{sprite}}}');
+    }
+    {{/first}}
     .icon--{{base}}{
         width: {{width.outer}}px;
         height: {{height.outer}}px;
-        background-image: url('./app/temp/sprite/css/{{{sprite}}}');
         background-position: {{position.relative.xy}};
     }
 {{/shapes}}
