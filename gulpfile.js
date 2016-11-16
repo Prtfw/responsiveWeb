@@ -1,5 +1,8 @@
 var     gulp = require("gulp"),
         watch = require("gulp-watch"),
+        svgsprite = require("gulp-svg-sprite"),
+        rename = require('gulp-rename'),
+
         
         //styles vars
         postcss = require('gulp-postcss'),
@@ -52,3 +55,27 @@ gulp.task('watch', function(){
 
 })
 
+var config = {
+    mode: {
+            css:{
+                render: {
+                    css: {
+                        template: './templates/sprite.css'
+                    }
+                }
+        }
+    }
+}
+
+gulp.task("makeSprite", function(){
+    return gulp.src('./app/assets/images/icons/**/*.svg')
+            .pipe(svgsprite(config))
+            .pipe(gulp.dest('./app/temp/sprite/'))
+            
+})
+
+gulp.task("copySprite", function(){
+    return gulp.src('./app/temp/sprite/css/*.css')
+            .pipe(rename("_sprite.css"))
+            .pipe(gulp.dest('./app/styles'))
+})
