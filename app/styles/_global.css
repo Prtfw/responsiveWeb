@@ -21,6 +21,8 @@ a {
     padding: 0 18px 1px 18px;
     overflow: visible;
     margin-bottom: 98px;
+    width: 100%;
+    
     
     @mixin atMed{
         padding: 0 1.8125rem 1px 1.8125rem;
@@ -174,10 +176,11 @@ a {
 }
 
 .feature-block{
-    color: white;
+   
     position: relative;
     padding-bottom: 2.5rem;
-    
+    color: white;
+
     
     @mixin atSmall{
         padding-left: 94px;
@@ -189,6 +192,7 @@ a {
         margin-top: .7em;
         margin-bottom: .8rem;
         text-align: center;
+        color: white;
         
         @mixin atSmall{
                 margin-top: 1em;
