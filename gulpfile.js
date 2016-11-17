@@ -13,20 +13,21 @@ var     gulp = require("gulp"),
         nest = require("postcss-nested"),
         cssimp = require("postcss-import"),
         mixins = require("postcss-mixins"),
+        hexrgba = require("postcss-hexrgba"),
         browsync = require("browser-sync").create();
         //end of styles vars
         
         
-gulp.task('default', function(){console.log("yay!")})
+// gulp.task('default', function(){console.log("yay!")})
 
 
-gulp.task('html', function(){console.log("something html")})
+// gulp.task('html', function(){console.log("something html")})
 
 
 gulp.task('styles', function(){
 
     return gulp.src('./app/styles/styles.css')//gulp.src is asynch, gotta let gulp known when completed.
-    .pipe(postcss([cssimp, mixins, cssvars, autopre, nest]))
+    .pipe(postcss([cssimp, mixins, cssvars, hexrgba, autopre, nest]))
     .on('error', function(errInfo){
         this.emit('end');
         console.log(errInfo.toString())
@@ -53,7 +54,7 @@ gulp.task('watch', function(){
     port: 8082
     });
     watch('./app/index.html', function(){browsync.reload()})
-    watch('./app/**/*.css', function(){gulp.start('cssInject')}) //styles/
+    watch(['./app/**/*.css', "!./app/temp/styles/**/*.css"], function(){gulp.start('cssInject')}) //styles/
 
 })
 

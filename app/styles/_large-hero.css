@@ -8,6 +8,7 @@
         }
 
         &__text{
+            padding-top: 90px;
             position: absolute;
             top:50%;
             transform: translateY(-50%);
@@ -15,6 +16,11 @@
             width: 100%;
             text-align: center;
             margin: 0;
+            @mixin atMed{
+                padding-top: 60px;
+
+            };
+
         }
         
         &__title{
@@ -27,13 +33,14 @@
                   font-size: 4.8rem;
             };
            
-            /*@mixin atMed{*/
-            /*    font-size: 3.2rem;*/
-            /*};*/
+            @mixin atMed{
+                font-size: 3.2rem;
+
+            };
             
-            /*@mixin atLg{*/
-            /*    font-size: 4.8rem;*/
-            /*};*/
+            @mixin atLg{
+                font-size: 4.8rem;
+            };
         }
         
         &__subtitle{
