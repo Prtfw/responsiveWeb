@@ -2,7 +2,7 @@ import $ from 'jquery';
 
 class Scroll{
     constructor(){
-        alert('scroll')
+        //alert('scroll')
         this.show = $('.feature-block');
         this.initHide()
         // this.makeWaypoints()

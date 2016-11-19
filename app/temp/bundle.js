@@ -10360,7 +10360,7 @@
 	    function Scroll() {
 	        _classCallCheck(this, Scroll);
 
-	        alert('scroll');
+	        //alert('scroll')
 	        this.show = (0, _jquery2.default)('.feature-block');
 	        this.initHide();
 	        // this.makeWaypoints()
