@@ -10,6 +10,7 @@
      }
      
      @mixin atMed{
+          position: fixed;
           background-color: rgba($blue, .5);
 
      }
