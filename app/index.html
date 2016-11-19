@@ -9,7 +9,14 @@
   <meta name="description" content="Your clarity. One trip away. We create soul restoring journeys that inspire you to be you.">
   <link rel="stylesheet" href="temp/styles/styles.css">
 </head>
-<script id="__bs_script__"><![CDATA[document.write("<script async src='http://HOST:8082/browser-sync/browser-sync-client.js?v=2.17.5'><\/script>".replace("HOST", location.hostname));]]></script>
+<script id="__bs_script__">//<![CDATA[
+     document.write("<script async src='http://HOST:8082/browser-sync/browser-sync-client.js?v=2.17.5'><\/script>".replace("HOST", location.hostname));
+//]]></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/noframework.waypoints.js"></script>
+<script
+  src="https://code.jquery.com/jquery-3.1.1.slim.min.js"
+  integrity="sha256-/SIrNqv8h6QGKDuNoLGA4iret+kyesCkHGzVUUV0shc="
+  crossorigin="anonymous"></script>
 <body>
   <header class="header">
     <div class="wrapper">
@@ -160,7 +167,7 @@
         </div>
       </div>
       
-      <div class="row__Lg4">
+      <div id ='basic-waypoint' class="row__Lg4">
         <div class="testimonial  testimonial__last" >
           <div class='testimonial__photo'>
             <img sizes ="160px"  srcset="assets/images/testimonial-cat.jpg 160px, assets/images/testimonial-cat-hi-dpi.jpg 320w">
@@ -185,6 +192,32 @@
         <a href="#" class="btn btn--orange">Get in Touch</a></p>
     </div>
   </footer>
+  <script>
+var show = $('.feature-block');
+
+show.each(function(){
+                var self = this
+                var waypoint = new Waypoint({
+                    element: self,
+                    //handler: addCls()
+                    handler:        function() {
+                        $(self).addClass("toReveal--visible");
+                    },
+                    offset: '85%'
+                })
+            });
+            
+               
+// var waypoint = new Waypoint({
+//   element: document.getElementById('basic-waypoint'),
+//   handler: function() {
+//     notify('Basic waypoint triggered')
+//   }
+// })
+
+// console.log(waypoint)
+
+</script>
     <script src='./temp/bundle.js'> </script>
 </body>
 </html>

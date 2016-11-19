@@ -14,6 +14,11 @@ module.exports ={
             exclude: /node_modules/
             }
             ]
+    },
+    resolve: {
+    alias: {
+      'Waypoints': './node_modules/waypoints/lib/noframework.waypoints.js'
     }
+  }
         
 }

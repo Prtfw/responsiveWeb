@@ -1335,6 +1335,16 @@ a {
   }
 }
 
+.toReveal{
+    opacity: 0;
+    -webkit-transition: opacity 1.5s ease-out;
+    transition: opacity 1.5s ease-out;
+
+}
+
+.toReveal--visible{
+  opacity: 1;
+}
 
 
 

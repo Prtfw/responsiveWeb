@@ -2,6 +2,7 @@ import $ from 'jquery'
 
 class Menu{
     constructor(){
+        //alert('menu')
         this.menuIcon = $('.header__menu-icon')
         this.menuBar = $('.header__menu')
         this.header = $('.header')
