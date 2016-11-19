@@ -702,8 +702,11 @@ a {
     box-sizing: border-box;
 }
 
-.main-nav{
+@media (min-width: 800px) {
+
+  .main-nav {
     float: right;
+  }
 }
 
 .main-nav ul {
@@ -719,16 +722,48 @@ a {
 
 .main-nav li {
   list-style: none;
-  float: left;
-  padding-right: 20px;
+  padding-right: 7px;
   padding-top: 12px;
+  display: inline-block;
+}
+
+@media (min-width: 800px) {
+
+  .main-nav li {
+    float: left;
+    display: block;
+    padding-right: 20px;
+  }
+}
+
+.main-nav li li: last-child{
+  padding-right: 0;
+}
+
+@media (min-width: 800px) {
+
+  .main-nav li li: last-child {
+    padding-right: 20px;
+  }
 }
 
 .main-nav a {
+  background-color: rgba(47,85,114, .5);
+  padding: 5px 8px;
   top: 0px;
   color: white;
   text-decoration: none;
   font-weight: 300;
+  font-size: .8rem;
+}
+
+@media (min-width: 800px) {
+
+  .main-nav a {
+    font-size: 1rem;
+    background-color: transparent;
+    padding: 12px 0;
+  }
 }
 
 .testimonial{
@@ -956,7 +991,7 @@ a {
 /*do not change this file... it's auto created by gulp*/
 
 .icon{
-        background-image: url('./app/temp/sprite/css/svg/sprite.css-0f9283b3.svg');
+        background-image: url('/app/temp/sprite/css/svg/sprite.css-0f9283b3.svg');
     }
 
 .icon--clear-view-escapes{
@@ -1140,33 +1175,108 @@ a {
      position: absolute;
      z-index: 2;
      width: 100%;
+     -webkit-transition: background-color .3s ease-out;
+     transition: background-color .3s ease-out;
+}
+
+.header--expanded{
+  background-color: rgba(47,85,114, .55)
 }
 
 @media (min-width: 800px) {
 
   .header {
-    background-color: rgba(47,85,114, .3);
+    background-color: rgba(47,85,114, .5);
   }
 }
 
 .header__menu{
-  display: none;
+  opacity: 0;
+  -webkit-transition: all .3s ease-out;
+  transition: all .3s ease-out;
+  position: relative;
+  z-index: -10;
+  -webkit-transform: scale(1.2);
+  transform: scale(1.2);
+  padding-top: 90px;
+  text-align: center;
 }
 
 @media (min-width: 800px) {
 
   .header__menu {
-    display: block;
+    opacity: 1;
+    z-index: 1;
+    padding-top: 0;
+    -webkit-transform: scale(1);
+    transform: scale(1);
   }
 }
 
+.header__menu--visible{
+  opacity: 1;
+  z-index: 1;
+  -webkit-transform: scale(1);
+  transform: scale(1);
+}
+
 .header__menu-icon{
+  margin: 10px;
   width: 20px;
-  height: 20px;
-  background-color: black;
+  height: 18px;
   position: absolute;
   top: 10px;
   right: 10px;
+  z-index: 10;
+}
+
+/*background-color: rgba($blue, .55);*/
+
+.header__menu-icon::before{
+  content: "";
+  position: absolute;
+  top:0;
+  left:0;
+  width:20px;
+  height:2px;
+  background-color: #fff;
+  -webkit-transform-origin: 0 0;
+  transform-origin: 0 0;
+  -webkit-transition: -webkit-transform .3s ease-out;
+  transition: -webkit-transform .3s ease-out;
+  transition: transform .3s ease-out;
+  transition: transform .3s ease-out, -webkit-transform .3s ease-out;
+}
+
+/*outline:  5px solid rgba($blue, .55);*/
+
+.header__menu-icon-mid{
+  position: absolute;
+  top:8px;
+  left:0;
+  width:20px;
+  height:2px;
+  background-color: #fff;
+  -webkit-transition: all .3s ease-out;
+  transition: all .3s ease-out;
+  -webkit-transform-origin: 0 50%;
+  transform-origin: 0 50%;
+}
+
+.header__menu-icon::after{
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left:0;
+  width:20px;
+  height:2px;
+  background-color: #fff;
+  -webkit-transform-origin: 0 100%;
+  transform-origin: 0 100%;
+  -webkit-transition: -webkit-transform .3s ease-out;
+  transition: -webkit-transform .3s ease-out;
+  transition: transform .3s ease-out;
+  transition: transform .3s ease-out, -webkit-transform .3s ease-out;
 }
 
 @media (min-width: 800px) {
@@ -1176,8 +1286,32 @@ a {
   }
 }
 
+.header__menu-icon-x::before{
+  -webkit-transform: rotate(45deg) scaleX(1.25);
+  transform: rotate(45deg) scaleX(1.25);
+}
+
+.header__menu-icon-x .header__menu-icon-mid{
+  opacity: 0;
+  -webkit-transform: scaleX(0);
+  transform: scaleX(0);
+}
+
+.header__menu-icon-x::after{
+  -webkit-transform: rotate(-45deg) scaleX(1.25) translateY(1px);
+  transform: rotate(-45deg) scaleX(1.25) translateY(1px);
+}
+
 .header__btn{
-  float: right;
+  margin-bottom: 5px;
+}
+
+@media (min-width: 800px) {
+
+  .header__btn {
+    margin-bottom: 0;
+    float: right;
+  }
 }
 
 .header__logo{

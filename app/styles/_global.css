@@ -17,7 +17,9 @@ a {
 }
 
 .main-nav{
-    float: right;
+    @mixin atMed{
+        float: right;
+    }
     
     ul {
         margin: 0;
@@ -27,17 +29,42 @@ a {
     
     li {
         list-style: none;
-        float: left;
-        padding-right: 20px;
+        padding-right: 7px;
         padding-top: 12px;
+        display: inline-block;
         
+        @mixin atMed{
+            float: left;
+            display: block;
+            padding-right: 20px;
+
+
+        }
+        
+        li: last-child{
+            padding-right: 0;
+            
+            @mixin atMed{
+                padding-right: 20px;
+            }
+        }
     }
     
     a {
+        background-color: rgba($blue, .5);
+        padding: 5px 8px;
         top: 0px;
         color: white;
         text-decoration: none;
         font-weight: 300;
+        font-size: .8rem;
+        
+        @mixin atMed{
+                font-size: 1rem;
+                background-color: transparent;
+                padding: 12px 0;
+
+        }
     }
 }
 
