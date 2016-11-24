@@ -1309,8 +1309,8 @@ a {
 }
 
 .modal{
-    /*opacity: 0;*/
-    /*visibility: hidden;*/
+    opacity: 0;
+    visibility: hidden;
     position: fixed;
     z-index: 5;
     background-color: rgba(255,255,255,.92);

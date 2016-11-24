@@ -9970,18 +9970,30 @@
 	    function Scroll() {
 	        _classCallCheck(this, Scroll);
 
-	        //alert('scroll')
 	        this.show = (0, _jquery2.default)('.feature-block');
 	        this.initHide();
-	        // this.makeWaypoints()
-	        // console.log(waypoint)
+	        this.makeWaypoints();
 	    }
 
 	    _createClass(Scroll, [{
 	        key: 'initHide',
 	        value: function initHide() {
 	            this.show.addClass("toReveal");
-	            //alert("hide")
+	        }
+	    }, {
+	        key: 'makeWaypoints',
+	        value: function makeWaypoints() {
+	            this.show.each(function () {
+	                var self = this;
+	                var waypoint = new Waypoint({
+	                    element: self,
+	                    handler: function handler() {
+
+	                        (0, _jquery2.default)(self).addClass("toReveal--visible");
+	                    },
+	                    offset: '90%'
+	                });
+	            });
 	        }
 	    }]);
 
