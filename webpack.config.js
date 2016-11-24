@@ -15,10 +15,10 @@ module.exports ={
             }
             ]
     },
-    resolve: {
-    alias: {
-      'Waypoints': './node_modules/waypoints/lib/noframework.waypoints.js'
-    }
-  }
+//     resolve: {
+//     alias: {
+//       'waypoints': __dirname + '/node_modules/waypoints/lib/noframework.waypoints.js'
+//     }
+//   }
         
 }

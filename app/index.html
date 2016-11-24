@@ -9,9 +9,9 @@
   <meta name="description" content="Your clarity. One trip away. We create soul restoring journeys that inspire you to be you.">
   <link rel="stylesheet" href="temp/styles/styles.css">
 </head>
-<script id="__bs_script__">//<![CDATA[
+ <script id="__bs_script__">//<![CDATA[
      document.write("<script async src='http://HOST:8082/browser-sync/browser-sync-client.js?v=2.17.5'><\/script>".replace("HOST", location.hostname));
-//]]></script>
+//]]></script>  <!-- -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/noframework.waypoints.js"></script>
 <script
   src="https://code.jquery.com/jquery-3.1.1.slim.min.js"
@@ -23,13 +23,14 @@
       <div class=header__logo> 
           <img src="assets/images/icons/clear-view-escapes.svg">
       </div>
+  
       
       <div class="header__menu-icon">
         <div class="header__menu-icon-mid"></div>
       </div>
       
       <div class="header__menu">
-          <div class="header__btn"> <a href="#" class ="btn">Get in Touch</a> </div>
+          <div class="header__btn"> <a href="#" class ="btn modal-open">Get in Touch</a> </div>
           <nav class="main-nav">
             <ul>
               <li><a href="#our-beginning">Our Beginning</a></li>
@@ -183,15 +184,36 @@
   </div>
 
 
+
   <footer class='footer'>
     <div class='wrapper'> 
       <p>
         <span class=footer__text>
           Copyright &copy; 2016 Clear View Escapes. All rights reserved. 
         </span>
-        <a href="#" class="btn btn--orange">Get in Touch</a></p>
+        <a href="#" class="btn btn--orange modal-open">Get in Touch</a></p>
     </div>
   </footer>
+  <div class='modal'>
+          <div class="modal__close"> X </div>
+          <div class=modal__center>
+
+            <h2 class='section-title section-title--blue'>     
+                <img class= 'section-title__icon' src="assets/images/icons/mail.svg" >
+            Get in <strong> Touch! </strong>
+            </h2>
+            <div class="wrapper">
+                        <p> Live Chat coming soon!  <br />  <br />For now, contact us using any platform below. </p>
+            </div>
+            <div class='social'>
+                <a href='#' class= 'social__link'><img class= 'social__icon' src="assets/images/icons/facebook.svg" ></a>          
+                <a href='#' class= 'social__link'><img class= 'social__icon' src="assets/images/icons/twitter.svg" ></a>          
+                <a href='#' class= 'social__link'><img class= 'social__icon' src="assets/images/icons/instagram.svg" ></a>          
+                <a href='#' class= 'social__link'><img class= 'social__icon' src="assets/images/icons/youtube.svg" ></a>          
+            </div>
+          </div>
+
+  </div>
   <script>
 var show = $('.feature-block');
 
@@ -218,6 +240,10 @@ show.each(function(){
 // console.log(waypoint)
 
 </script>
+
+
     <script src='./temp/bundle.js'> </script>
 </body>
+
+
 </html>
