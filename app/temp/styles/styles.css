@@ -1321,8 +1321,8 @@ a {
     text-align: center;
     -webkit-transform: scale(1.2);
             transform: scale(1.2);
-    -webkit-transition: all .3s ease-out;
-    transition: all .3s ease-out;
+    -webkit-transition: all .25s ease-out;
+    transition: all .25s ease-out;
 }
 
 .modal p{
@@ -1358,13 +1358,15 @@ a {
 .modal--visible{
   opacity: 1;
   visibility: visible;
-  -webkit-transform: scale(1.2);
-  transform: scale(1.2);
+  -webkit-transform: scale(1);
+  transform: scale(1);
 }
 
 .modal--hidden{
   opacity: 0;
   visibility: hidden;
+  -webkit-transform: scale(1.2);
+  transform: scale(1.2);
 }
 
 .social{

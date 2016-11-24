@@ -13,8 +13,8 @@ class Modal{
         this.modalBtn.click(this.openModal.bind(this))
         //x click
         this.modalX.click(this.closeModal.bind(this))
-        //excape key
-        
+        //escape key
+        $(document).keyup(this.keypresshandler.bind(this))
     }
     
     openModal(){
@@ -28,6 +28,10 @@ class Modal{
         this.modal.removeClass('modal--visible')
         this.modal.addClass("modal--hidden")
         return false
+    }
+    
+    keypresshandler(e){
+        if (e.keyCode == 27) {this.closeModal();}
     }
 }
 

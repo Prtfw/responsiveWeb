@@ -10,7 +10,7 @@
     right:0;
     text-align: center;
     transform: scale(1.2);
-    transition: all .3s ease-out;
+    transition: all .25s ease-out;
     
     p{
         font-size: 1.3rem;
@@ -42,12 +42,14 @@
     &--visible{
         opacity: 1;
         visibility: visible;    
-        transform: scale(1.2);
+        transform: scale(1);
     }
     
     &--hidden{
         opacity: 0;
         visibility: hidden;
+        transform: scale(1.2);
+
     }
 }
 

@@ -11172,7 +11172,8 @@
 	            this.modalBtn.click(this.openModal.bind(this));
 	            //x click
 	            this.modalX.click(this.closeModal.bind(this));
-	            //excape key
+	            //escape key
+	            (0, _jquery2.default)(document).keyup(this.keypresshandler.bind(this));
 	        }
 	    }, {
 	        key: 'openModal',
@@ -11189,6 +11190,13 @@
 	            this.modal.removeClass('modal--visible');
 	            this.modal.addClass("modal--hidden");
 	            return false;
+	        }
+	    }, {
+	        key: 'keypresshandler',
+	        value: function keypresshandler(e) {
+	            if (e.keyCode == 27) {
+	                this.closeModal();
+	            }
 	        }
 	    }]);
 
